@@ -56,7 +56,11 @@ def race(turtleNum):
     for _ in range(math.floor(turtle.window_height()/2/max(speeds))):
         for index, turt in enumerate(turtles):
             turt.forward(speeds[index])
-
+    
+    f = open('output.txt','w')
+    for index, turt in enumerate(turtles):
+        f.write(f'{turt.color()[0]}: {speeds[index]}\n')
+    f.close()
 
 TK_SILENCE_DEPRECATION = 1
 colors = "maroon blue red gray brown tan pink orange green"
